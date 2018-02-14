@@ -3,10 +3,8 @@ import org.gradle.internal.os.OperatingSystem
 buildscript {
     repositories {
         mavenLocal()
-        jcenter()
         maven { url "http://repo.spring.io/plugins-release" }
         maven { url "https://plugins.gradle.org/m2/" }
-        maven { url "http://repo.spring.io/milestone/" }
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}"
@@ -137,7 +135,9 @@ configurations {
 
 repositories {
     mavenLocal()
-    jcenter()
+    mavenCentral()
+    maven { url "http://repo.spring.io/milestone/" }
+    maven { url "http://repo.spring.io/libs-milestone" }
 }
 
 dependencies {
